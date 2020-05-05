@@ -2,7 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import { useHistory } from 'react-router-dom';
 
-import movies from 'constants/movies.json';
+import movies from 'common/constants/movies.json';
 import styles from './styles.module.scss';
 
 function MovieSearch() {

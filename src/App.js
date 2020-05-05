@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MovieSearch from 'pages/MovieSearch';
 import Home from 'pages/Home';
+import Movie from 'pages/Movie';
 
 import './App.css';
 
@@ -19,7 +20,7 @@ function App() {
           </Route>
 
           <Route path="/movies/:asin">
-            
+            <Movie />
           </Route>
         </Switch>
       </Router>
