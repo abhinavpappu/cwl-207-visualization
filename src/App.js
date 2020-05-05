@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import MovieSearch from 'pages/MovieSearch';
 import Home from 'pages/Home';
-import Movie from 'pages/Movie';
+import Movies from 'pages/Movies';
 
 import './App.css';
 
@@ -15,12 +14,8 @@ function App() {
             <Home />
           </Route>
 
-          <Route path="/movies" exact>
-            <MovieSearch />
-          </Route>
-
-          <Route path="/movies/:asin">
-            <Movie />
+          <Route path="/movies/:asin?">
+            <Movies />
           </Route>
         </Switch>
       </Router>
