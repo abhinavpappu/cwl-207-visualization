@@ -55,6 +55,7 @@ function MovieSearch() {
               formatTooltipY: formatSeconds,
               formatTooltipX: actor => `${actor} (${actorToCharacterMap[actor]})`,
             }}
+            key={asin} // forces the chart to completely rerender when the asin changes
           />
         </div>
       )
