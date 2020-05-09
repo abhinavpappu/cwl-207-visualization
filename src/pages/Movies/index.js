@@ -36,6 +36,8 @@ function MovieSearch() {
   const currentValue = asin ? { value: asin, label: getLabel(movieList[asin]) } : null;
   return (
     <div className={styles.Movies}>
+      <div className={styles.scrollSnap} />
+
       <div className={styles.movieSelect}>
         <Select
           placeholder="Select a movie..."
@@ -43,6 +45,15 @@ function MovieSearch() {
           onChange={handleMovieSelect}
           options={movieOptions}
           isClearable
+          theme={theme => ({
+            ...theme,
+            colors: {
+              ...theme.colors,
+              primary: '#009688',
+              primary25: '#80cbc4',
+              primary50: '#52c7b8',
+            },
+          })}
         />
       </div>
       

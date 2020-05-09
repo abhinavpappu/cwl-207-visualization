@@ -1,4 +1,12 @@
 .Movies {
+  height: 100vh;
+  overflow: auto;
+  scroll-snap-type: y proximity;
+
+  .scrollSnap {
+    scroll-snap-align: start;
+  }
+
   .movieSelect {
     width: 90%;
     max-width: 1000px;
@@ -9,12 +17,15 @@
     padding-bottom: 100px;
 
     .screentimeChart {
+      scroll-snap-align: start;
       width: 90%;
       margin: 0 auto;
       margin-top: 50px;
     }
 
     .sharedScreentimeGraph {
+      scroll-snap-align: start;
+      margin-top: 100px;
       height: 100vh;
     }
   }
