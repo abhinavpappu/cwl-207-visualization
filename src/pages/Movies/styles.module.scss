@@ -5,9 +5,17 @@
     margin: 50px auto;
   }
 
-  .chart {
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 50px;
+  .visualizations {
+    padding-bottom: 100px;
+
+    .screentimeChart {
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+
+    .sharedScreentimeGraph {
+      height: 100vh;
+    }
   }
 }
