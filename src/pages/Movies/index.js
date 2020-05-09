@@ -58,7 +58,7 @@ function MovieSearch() {
       </div>
       
       {movies[asin] && (
-        <div className={styles.visualizations}>
+        <>
           <div className={styles.screentimeChart}>
             <TotalScreentimes characters={movies[asin].characters} key={asin} />
           </div>
@@ -66,7 +66,7 @@ function MovieSearch() {
           <div className={styles.sharedScreentimeGraph}>
             <SharedScreentimeGraph characters={movies[asin].characters} />
           </div>
-        </div>
+        </>
       )}
     </div>
   );

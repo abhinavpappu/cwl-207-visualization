@@ -7,7 +7,7 @@ const GraphEdge = maxSharedScreentime => ({ link, ...restProps }) => {
   const normalizeScreentimeTo = normalizeSquare(link.sharedScreentime, maxSharedScreentime);
   const strokeWidth = normalizeScreentimeTo(strokeWidthRange);
 
-  const stroke = 'steelblue';
+  const stroke = '#009688';
 
   return (
     <line

@@ -5,8 +5,8 @@ const fontSizeRange = [7, 20];
 const radiusRange = [15, 55];
 
 const GraphNode = (maxScreentime, numNodes) => ({ node }) => {
-  const stroke = '#708090';
-  const fill = '#d7dce0';
+  const stroke = '#e57373';
+  const fill = '#ffcdd2';
 
   const normalizeScreentimeTo = normalize(node.totalScreentime, maxScreentime);
   const radius = normalizeScreentimeTo(radiusRange);
@@ -31,6 +31,7 @@ const GraphNode = (maxScreentime, numNodes) => ({ node }) => {
     <circle
       fill={fill}
       stroke={stroke}
+      strokeWidth={2}
       r={radius}
     />
   )

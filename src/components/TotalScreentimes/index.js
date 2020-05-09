@@ -16,12 +16,12 @@ function TotalScreentimes({ characters }) {
   const characterData = characters.map(character => ([
     character.actor,
     character.totalScreentime,
-    `<div style="width: 275px; text-align: center; font-size: 14px;">` +
+    `<div style="width: 275px; text-align: center;">` +
       `<img height="125px" style="display:block; margin: auto" src="${character.image}">` +
-      `<div style="margin-top: 8px; font-weight: bold; color: #444">${character.actor}</div>` + 
-      `<div style="font-size: 11px; margin-top: 2px;">(${character.name})</div>` +
+      `<div style="margin-top: 8px; font-weight: bold; color: #444; font-size: 15px;">${character.actor}</div>` + 
+      `<div style="font-size: 12px; margin-top: 2px;">(${character.name})</div>` +
       `<div style="height: 4px; background-color: ${colors[character.gender]}; margin: 7px 0"> </div>` +
-      `<div style="margin-bottom: 8px; font-weight: bold; color: #444">${formatSecondsText(character.totalScreentime)}</div>` +
+      `<div style="margin-bottom: 8px; font-weight: bold; color: #444; font-size: 14px">${formatSecondsText(character.totalScreentime)}</div>` +
     `</div>`,
     colors[character.gender],
   ]));
@@ -46,13 +46,13 @@ function TotalScreentimes({ characters }) {
         ...characterData
       ]}
       options={{
-        title: 'Total Screentime by Character',
+        title: 'Total Screentime by Character\n\n',
         vAxis: {
             ticks,
         },
         legend: 'none',
         chartArea: {
-          top: 100,
+          top: 90,
           right: 0,
           bottom: 100,
           left: 80,
@@ -65,7 +65,8 @@ function TotalScreentimes({ characters }) {
           groupWidth: '55%'
         },
         titleTextStyle: {
-          fontSize: 18
+          fontSize: 18,
+          color: '#555',
         },
         tooltip: {
           isHtml: true,

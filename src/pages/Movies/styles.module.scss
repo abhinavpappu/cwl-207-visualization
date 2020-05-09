@@ -13,20 +13,16 @@
     margin: 50px auto;
   }
 
-  .visualizations {
-    padding-bottom: 100px;
+  .screentimeChart {
+    scroll-snap-align: start;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
 
-    .screentimeChart {
-      scroll-snap-align: start;
-      width: 90%;
-      margin: 0 auto;
-      margin-top: 50px;
-    }
-
-    .sharedScreentimeGraph {
-      scroll-snap-align: start;
-      margin-top: 100px;
-      height: 100vh;
-    }
+  .sharedScreentimeGraph {
+    scroll-snap-align: start;
+    margin-top: 100px;
+    height: 100vh;
   }
 }
