@@ -7,11 +7,12 @@ export function buildGraph(characters) {
 }
 
 function generateNodes(characters) {
-  return characters.map(([nconst, { totalScreentime, name, actor, image }]) => ({
+  return characters.map(([nconst, { totalScreentime, name, actor, image, gender }]) => ({
     id: nconst,
     name,
     actor,
-    img: image,
+    image,
+    gender,
     totalScreentime,
   }));
 }

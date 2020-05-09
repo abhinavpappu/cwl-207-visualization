@@ -4,7 +4,8 @@ import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import styles from './styles.module.scss';
-import movieList from 'common/constants/movie-list.json';
+import movieList from 'common/movie-list.json';
+import colors from 'common/colors.json';
 import TotalScreentimes from 'components/TotalScreentimes';
 import SharedScreentimeGraph from 'components/SharedScreentimeGraph';
 
@@ -49,12 +50,24 @@ function MovieSearch() {
             ...theme,
             colors: {
               ...theme.colors,
-              primary: '#009688',
-              primary25: '#80cbc4',
-              primary50: '#52c7b8',
+              primary: colors.neutral.dark,
+              primary25: colors.neutral.light,
+              primary50: colors.neutral.normal,
             },
           })}
         />
+      </div>
+
+      <div className={styles.colorKey}>
+        {Object.entries(colors).map(([key, color]) => (
+          <div className={styles.colorRow}>
+            <div
+              className={styles.colorBox}
+              style={{ backgroundColor: color.light, borderColor: color.normal }}
+            />
+            <span className={styles.colorText}>{key}</span>
+          </div>
+        ))}
       </div>
       
       {movies[asin] && (

@@ -2,11 +2,7 @@ import React from 'react';
 import Chart from 'react-google-charts';
 
 import { formatSecondsText } from 'common/util';
-
-const colors = {
-  male: '#ef5350',
-  female: '#26a69a',
-};
+import colors from 'common/colors.json';
 
 function TotalScreentimes({ characters }) {
   // get characters and sort descending by total screentime
@@ -20,10 +16,10 @@ function TotalScreentimes({ characters }) {
       `<img height="125px" style="display:block; margin: auto" src="${character.image}">` +
       `<div style="margin-top: 8px; font-weight: bold; color: #444; font-size: 15px;">${character.actor}</div>` + 
       `<div style="font-size: 12px; margin-top: 2px;">(${character.name})</div>` +
-      `<div style="height: 4px; background-color: ${colors[character.gender]}; margin: 7px 0"> </div>` +
+      `<div style="height: 4px; background-color: ${colors[character.gender].normal}; margin: 7px 0"> </div>` +
       `<div style="margin-bottom: 8px; font-weight: bold; color: #444; font-size: 14px">${formatSecondsText(character.totalScreentime)}</div>` +
     `</div>`,
-    colors[character.gender],
+    colors[character.gender].normal,
   ]));
 
   const maxScreentime = characters.reduce((max, current) => Math.max(current.totalScreentime, max), 0);

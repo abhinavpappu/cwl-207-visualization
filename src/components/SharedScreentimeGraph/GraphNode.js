@@ -1,13 +1,11 @@
 import React from 'react';
 import { formatSecondsTime, normalize } from 'common/util';
+import colors from 'common/colors.json';
 
 const fontSizeRange = [7, 20];
 const radiusRange = [15, 55];
 
 const GraphNode = (maxScreentime, numNodes) => ({ node }) => {
-  const stroke = '#e57373';
-  const fill = '#ffcdd2';
-
   const normalizeScreentimeTo = normalize(node.totalScreentime, maxScreentime);
   const radius = normalizeScreentimeTo(radiusRange);
   const fontSize = normalizeScreentimeTo(fontSizeRange);
@@ -16,7 +14,7 @@ const GraphNode = (maxScreentime, numNodes) => ({ node }) => {
 
   const renderImage = () => (
     <image
-      href={node.img}
+      href={node.image}
       x="0"
       y="0"
       height={radius * 2}
@@ -29,8 +27,8 @@ const GraphNode = (maxScreentime, numNodes) => ({ node }) => {
 
   const renderCircle = () => (
     <circle
-      fill={fill}
-      stroke={stroke}
+      fill={colors[node.gender].light}
+      stroke={colors[node.gender].normal}
       strokeWidth={2}
       r={radius}
     />
@@ -39,8 +37,8 @@ const GraphNode = (maxScreentime, numNodes) => ({ node }) => {
   return (
     <>
       <g>
-        <title>{screentime}</title>
-        {node.img ? renderImage() : renderCircle()}
+        <title>{`${node.actor}\n${screentime}`}</title>
+        {node.image ? renderImage() : renderCircle()}
       </g>
 
       <g style={{ fontSize: fontSize + 'px' }}>

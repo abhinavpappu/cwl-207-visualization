@@ -10,7 +10,36 @@
   .movieSelect {
     width: 90%;
     max-width: 1000px;
-    margin: 50px auto;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  .colorKey {
+    width: 80%;
+    margin: 40px auto 0 auto;
+
+    .colorRow {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+
+      .colorBox {
+        display: inline-block;
+        height: 20px;
+        width: 30px;
+        border-width: 3px;
+        border-style: solid;
+        margin: 0 10px;
+      }
+
+      .colorText {
+        text-transform: capitalize;
+        color: #444444;
+        font-weight: 500;
+      }
+    }
+
+    
   }
 
   .screentimeChart {
