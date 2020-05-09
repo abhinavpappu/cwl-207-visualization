@@ -1,7 +1,7 @@
 import React from 'react';
 import { normalizeSquare } from 'common/util';
 
-const strokeWidthRange = [1, 7]; 
+const strokeWidthRange = [1, 8]; 
 
 const GraphEdge = maxSharedScreentime => ({ link, ...restProps }) => {
   const normalizeScreentimeTo = normalizeSquare(link.sharedScreentime, maxSharedScreentime);

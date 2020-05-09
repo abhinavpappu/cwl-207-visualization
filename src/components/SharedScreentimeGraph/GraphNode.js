@@ -2,7 +2,7 @@ import React from 'react';
 import { formatSecondsTime, normalize } from 'common/util';
 
 const fontSizeRange = [7, 20];
-const radiusRange = [10, 50];
+const radiusRange = [15, 55];
 
 const GraphNode = (maxScreentime, numNodes) => ({ node }) => {
   const stroke = '#708090';
