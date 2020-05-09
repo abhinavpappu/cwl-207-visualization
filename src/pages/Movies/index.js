@@ -57,21 +57,21 @@ function MovieSearch() {
           })}
         />
       </div>
-
-      <div className={styles.colorKey}>
-        {Object.entries(colors).map(([key, color]) => (
-          <div className={styles.colorRow}>
-            <div
-              className={styles.colorBox}
-              style={{ backgroundColor: color.light, borderColor: color.normal }}
-            />
-            <span className={styles.colorText}>{key}</span>
-          </div>
-        ))}
-      </div>
       
       {movies[asin] && (
         <>
+          <div className={styles.colorKey}>
+            {Object.entries(colors).map(([key, color]) => (
+              <div className={styles.colorRow}>
+                <div
+                  className={styles.colorBox}
+                  style={{ backgroundColor: color.light, borderColor: color.normal }}
+                />
+                <span className={styles.colorText}>{key}</span>
+              </div>
+            ))}
+          </div>
+          
           <div className={styles.screentimeChart}>
             <TotalScreentimes characters={movies[asin].characters} key={asin} />
           </div>

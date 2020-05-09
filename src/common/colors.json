@@ -1,0 +1,15 @@
+{
+  "female": {
+    "normal": "#26a69a",
+    "light": "#80cbc4"
+  },
+  "male": {
+    "normal": "#ef5350",
+    "light": "#ef9a9a"
+  },
+  "neutral": {
+    "normal": "#78909c",
+    "light": "#a7c0cd",
+    "dark": "#4b636e"
+  }
+}
