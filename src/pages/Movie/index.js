@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import { useHistory, useParams } from 'react-router-dom';
-import axios from 'axios';
 
 import styles from './styles.module.scss';
-import movieList from 'common/movie-list.json';
+import movies from 'common/movies.json';
 import colors from 'common/colors.json';
 import TotalScreentimes from 'components/TotalScreentimes';
 import SharedScreentimeGraph from 'components/SharedScreentimeGraph';
 
 const getLabel = ({ title, year }) => `${title} (${year})`
-const movieOptions = Object.entries(movieList).map(([asin, movieDetails]) => ({
+const movieOptions = Object.entries(movies).map(([asin, movieDetails]) => ({
   label: getLabel(movieDetails),
   value: asin,
 }));
@@ -18,12 +17,6 @@ const movieOptions = Object.entries(movieList).map(([asin, movieDetails]) => ({
 function MovieSearch() {
   const { asin } = useParams();
   const history = useHistory();
-  
-  const [movies, setMovies] = useState({});
-
-  useEffect(() => {
-    axios.get('/data/movies.json').then(response => setMovies(response.data));
-  }, []);
 
   const handleMovieSelect = selection => {
     if (selection) {
@@ -34,7 +27,7 @@ function MovieSearch() {
     }
   }
 
-  const currentValue = asin ? { value: asin, label: getLabel(movieList[asin]) } : null;
+  const selectedMovie = asin ? { value: asin, label: getLabel(movies[asin]) } : null;
   return (
     <div className={styles.Movies}>
       <div className={styles.scrollSnap} />
@@ -42,7 +35,7 @@ function MovieSearch() {
       <div className={styles.movieSelect}>
         <Select
           placeholder="Select a movie..."
-          value={currentValue}
+          value={selectedMovie}
           onChange={handleMovieSelect}
           options={movieOptions}
           isClearable
