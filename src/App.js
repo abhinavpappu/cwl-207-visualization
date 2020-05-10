@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from 'pages/Home';
-import Movies from 'pages/Movies';
+import Movie from 'pages/Movie';
 
 import './App.css';
 
@@ -14,8 +14,12 @@ function App() {
             <Home />
           </Route>
 
+          <Route path="/movie/:asin?">
+            <Movie />
+          </Route>
+
           <Route path="/movies/:asin?">
-            <Movies />
+            <Movie />
           </Route>
         </Switch>
       </Router>

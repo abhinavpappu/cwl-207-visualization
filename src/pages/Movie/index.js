@@ -28,9 +28,9 @@ function MovieSearch() {
   const handleMovieSelect = selection => {
     if (selection) {
       const { value: asin } = selection;
-      history.push(`/movies/${asin}`);
+      history.push(`/movie/${asin}`);
     } else {
-      history.push('/movies');
+      history.push('/movie');
     }
   }
 
@@ -60,23 +60,31 @@ function MovieSearch() {
       
       {movies[asin] && (
         <>
-          <div className={styles.colorKey}>
-            {Object.entries(colors).map(([key, color]) => (
-              <div className={styles.colorRow}>
-                <div
-                  className={styles.colorBox}
-                  style={{ backgroundColor: color.light, borderColor: color.normal }}
-                />
-                <span className={styles.colorText}>{key}</span>
-              </div>
-            ))}
+          <div className={styles.header}>
+            <div className={styles.contentList}>
+              <h3>Visualizations</h3>
+              <a className={styles.item} href="#total-screentime">1. Total Screentime by Character</a>
+              <a className={styles.item} href="#shared-screentime">2. Shared Screentime between Characters</a>
+            </div>
+
+            <div className={styles.colorKey}>
+              {Object.entries(colors).map(([key, color]) => (
+                <div className={styles.colorRow}>
+                  <div
+                    className={styles.colorBox}
+                    style={{ backgroundColor: color.light, borderColor: color.normal }}
+                  />
+                  <span className={styles.colorText}>{key}</span>
+                </div>
+              ))}
+            </div>
           </div>
           
-          <div className={styles.screentimeChart}>
+          <div id="total-screentime" className={styles.screentimeChart}>
             <TotalScreentimes characters={movies[asin].characters} key={asin} />
           </div>
 
-          <div className={styles.sharedScreentimeGraph}>
+          <div id="shared-screentime" className={styles.sharedScreentimeGraph}>
             <SharedScreentimeGraph characters={movies[asin].characters} />
           </div>
         </>
