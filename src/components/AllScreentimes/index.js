@@ -40,6 +40,9 @@ function AllScreentimes({ characters }) {
       ]}
       options={{
         fontName: 'Roboto',
+        hAxis: {
+          format: 'HH:mm:ss'
+        }
       }}
     />
   )
