@@ -24,9 +24,9 @@ function MovieSearch() {
   const handleMovieSelect = selection => {
     if (selection) {
       const { value: asin } = selection;
-      history.push(`/movie/${asin}`);
+      history.push(`/${asin}`);
     } else {
-      history.push('/movie');
+      history.push('/');
     }
   }
 
