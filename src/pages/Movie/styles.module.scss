@@ -70,7 +70,12 @@
 
   .sharedScreentimeGraph {
     scroll-snap-align: start;
-    margin-top: 100px;
+    margin-top: 50px;
     height: 100vh;
+  }
+
+  .allScreentimesChart {
+    scroll-snap-align: start;
+    margin-top: 50px;
   }
 }

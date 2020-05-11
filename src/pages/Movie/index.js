@@ -7,6 +7,7 @@ import movies from 'common/movies.json';
 import colors from 'common/colors.json';
 import TotalScreentimes from 'components/TotalScreentimes';
 import SharedScreentimeGraph from 'components/SharedScreentimeGraph';
+import AllScreentimes from 'components/AllScreentimes';
 
 const getLabel = ({ title, year }) => `${title} (${year})`
 const movieOptions = Object.entries(movies).map(([asin, movieDetails]) => ({
@@ -58,6 +59,7 @@ function MovieSearch() {
               <h3>Visualizations</h3>
               <a className={styles.item} href="#total-screentime">1. Total Screentime by Character</a>
               <a className={styles.item} href="#shared-screentime">2. Shared Screentime between Characters</a>
+              <a className={styles.item} href="#all-screentimes">3. All Scenes by Character</a>
             </div>
 
             <div className={styles.colorKey}>
@@ -74,11 +76,15 @@ function MovieSearch() {
           </div>
           
           <div id="total-screentime" className={styles.screentimeChart}>
-            <TotalScreentimes characters={movies[asin].characters} key={asin} />
+            <TotalScreentimes characters={movies[asin].characters} />
           </div>
 
           <div id="shared-screentime" className={styles.sharedScreentimeGraph}>
             <SharedScreentimeGraph characters={movies[asin].characters} />
+          </div>
+
+          <div id="all-screentimes" className={styles.allScreentimesChart}>
+            <AllScreentimes characters={movies[asin].characters} />
           </div>
         </>
       )}
