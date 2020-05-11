@@ -65,14 +65,14 @@ function MovieSearch() {
               <a className={styles.item} href="#all-screentimes">3. All Scenes by Character</a>
             </div>
 
-            <div className={styles.colorKey}>
-              {Object.entries(colors).map(([key, color]) => (
+            <div className={styles.colorLegend}>
+              {['male', 'female'].map(colorKey => (
                 <div className={styles.colorRow}>
                   <div
                     className={styles.colorBox}
-                    style={{ backgroundColor: color.light, borderColor: color.normal }}
+                    style={{ backgroundColor: colors[colorKey].light, borderColor: colors[colorKey].normal }}
                   />
-                  <span className={styles.colorText}>{key}</span>
+                  <span className={styles.colorText}>{colorKey}</span>
                 </div>
               ))}
             </div>
