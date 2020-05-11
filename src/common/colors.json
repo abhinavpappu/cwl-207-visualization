@@ -4,8 +4,8 @@
     "light": "#80cbc4"
   },
   "male": {
-    "normal": "#ef5350",
-    "light": "#ef9a9a"
+    "normal": "#673ab7",
+    "light": "#9a67ea"
   },
   "neutral": {
     "normal": "#78909c",
