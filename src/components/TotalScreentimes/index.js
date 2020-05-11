@@ -8,6 +8,8 @@ function TotalScreentimes({ characters }) {
   // get characters and sort descending by total screentime
   characters = Object.values(characters)
     .sort(({ totalScreentime: time1, }, { totalScreentime: time2 }) => time2 - time1);
+
+  const headers = ['Character', 'Screentime', { role: 'tooltip', p: { html: true } }, { role: 'style' }];
   
   const characterData = characters.map(character => ([
     character.actor,
@@ -38,7 +40,7 @@ function TotalScreentimes({ characters }) {
       chartType="ColumnChart"
       height={window.innerHeight}
       data={[
-        ['Character', 'Screentime', { role: 'tooltip', p: { html: true } }, { role: 'style' }],
+        headers,
         ...characterData
       ]}
       options={{

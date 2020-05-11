@@ -9,6 +9,7 @@ import TotalScreentimes from 'components/TotalScreentimes';
 import SharedScreentimeGraph from 'components/SharedScreentimeGraph';
 import AllScreentimes from 'components/AllScreentimes';
 import GenderPieChart from 'components/GenderPieChart';
+import GenderRevenueChart from 'components/GenderRevenueChart';
 
 const getLabel = ({ title, year }) => `${title} (${year})`
 const movieOptions = Object.entries(movies).map(([asin, movieDetails]) => ({
@@ -53,7 +54,7 @@ function MovieSearch() {
         />
       </div>
       
-      {movies[asin] && (
+      {movies[asin] ? (
         <>
           <div className={styles.header}>
             <GenderPieChart genderScreentimes={movies[asin].genderScreentimes} />
@@ -90,6 +91,10 @@ function MovieSearch() {
             <AllScreentimes characters={movies[asin].characters} />
           </div>
         </>
+      ) : (
+        <div className={styles.genderRevenueChart}>
+          <GenderRevenueChart movies={movies} />
+        </div>
       )}
     </div>
   );
