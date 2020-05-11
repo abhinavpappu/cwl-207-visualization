@@ -40,7 +40,10 @@ function GenderRevenueChart({ movies }) {
         ...data,
       ]}
       options={{
-        fontName: 'Roboto'
+        fontName: 'Roboto',
+        chart: {
+          title: " % Female Screentime vs Average Movie Revenue"
+        }
       }}
     />
   )
