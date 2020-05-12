@@ -35,6 +35,10 @@
         color: #4b636e;
         margin: 7px 0;
         text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
